@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h2>Image Upload</h2>
+        <% if(data.length == 0) { %>
+          <h2>Image Uploade</h2>
+          <form method="post" action="/uploading_images" enctype="multipart/form-data">
+              <label>Please Select your Image</label>
+              <input type="file" name="file" multiple>
+              <input type="submit" value="upload">
+          </form>
+          <hr>
+          <h2>image_preview</h2>
+        <ul>
+  <%} %>
+            <%data.forEach(img=>{ %>
+           <li><%=img.filename %></li>
+           <img src="http://localhost:7070/<%=img.filename %>">
+           <% });%> 
+          </ul>
+    </body>
+</html>
